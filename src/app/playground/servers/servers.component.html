@@ -1,0 +1,133 @@
+<div class="section">
+    <h4>Different ways of entering input data</h4>
+
+    <div class="row">
+        <div class="col-md-3">
+            Using input event: 
+        </div>
+        <div class="col-md-4">
+            <input type="text" (input)="onInput($event)" />
+        </div>
+        <div class="col-md-4">
+            Server Name (Display): {{serverName1}}
+        </div>
+    </div>
+
+    <hr/>
+
+    <div class="row">
+        <div class="col-md-3">
+            Using two way Binding (ngModel):
+        </div>
+        <div class="col-md-4">
+            <input type="text" [(ngModel)]="serverName2" />
+        </div>
+        <div class="col-md-4">
+            Server Name (Display): {{serverName2}}
+        </div>
+    </div>
+
+    <hr/>
+
+    <div class="row">
+        <div class="col-md-3">
+            Using reference via ViewChild:
+        </div>
+        <div class="col-md-4">
+            <input type="text" #servername3 /> <button type="button" (click)="getServerName3()">Get Value</button>
+        </div>
+        <div class="col-md-4">
+            Server Name (Display): {{serverName3}}
+        </div>
+    </div>
+
+
+    <hr/>
+
+    <div class="row">
+        <div class="col-md-3">
+            Using reference passed to button click: 
+        </div>
+        <div class="col-md-4">
+            <input type="text" #servername4 /> <button type="button" (click)="getServerName4(servername4)">Get Value</button>
+        </div>
+        <div class="col-md-4">
+            Server Name (Display): {{serverName4}}
+        </div>
+    </div>
+    <hr/>
+</div>
+
+<div class="section">
+    <h4>Enabling buitton afer 2 second with click event</h4>
+    <button class="btn btn-primary" [disabled]="!addServer" (click)="onAdd()">
+        Add Server
+    </button>
+</div>
+
+<div class="section">
+    <h4>NG IF/ELSE</h4>
+    <div *ngIf="serverCreated; else noservercreated">
+        <p>server is created with a server name: {{this.serverName1}}</p>
+    </div>
+    <ng-template #noservercreated>
+        <p>no server created!</p>
+    </ng-template>
+</div>
+
+<div class="section">
+    <h4>NG FOR Loop with index and passing input as props to child component</h4>
+    <h4>Child component taking input with conditional stuling</h4>
+    <app-server *ngFor="let server of servers; let i = index" [name]="server.name" [id]="i+1" ></app-server>
+</div>
+
+<div class="section">
+  <h4>NG FOR Loop with conditional styling</h4>
+  <div *ngFor="let server of servers; let i = index">
+    <span
+      [ngStyle]="{ color: i % 2 === 0 ? 'red' : 'green' }"
+      [ngClass]="{'even-border': i % 2 === 0 , 'odd-border': i % 2 !== 0 }">
+      {{ i + 1 }} - {{ server.date }} - {{ server.name }}
+    </span>
+  </div>
+</div>
+
+<div class="section">
+    <h4>Reset and Two way binding with button disabled/enabled</h4>
+    <div class="row">
+        <div class="col-md-3">
+            <span>enter username: </span>
+        </div>
+        <div class="col-md-3">
+            <input type="text" [(ngModel)]="username" />
+        </div>
+        <div class="col-md-3">
+            Username (Display): {{username}}
+        </div>
+        <div class="col-md-3">
+            <button class="btn btn-primary" [disabled]="!username" (click)="onResetUsername()" >
+                Reset
+            </button>
+        </div>
+    </div>
+</div>
+
+<div class="section">
+    <h4>Custom NG else directive (display if username != hanz</h4>
+    <p *appUnless="username === 'hanz'">
+        HANZZZZZ
+    </p>
+</div>
+
+<div class="section">
+    <h4>NG SWITCH DIRECTIVE (CASE alpha, delta, gamma)</h4>
+    <div [ngSwitch]="username">
+        <p *ngSwitchCase="'alpha'">Alpha</p>
+        <p *ngSwitchCase="'beta'">Beta</p>
+        <p *ngSwitchCase="'gamma'">Gamma</p>
+        <p *ngSwitchDefault="">Default VALUE</p>
+    </div>
+</div>
+
+
+

@@ -1,0 +1,17 @@
+.even-border {
+    border: solid 1px red;
+}
+
+.odd-border {
+    border: solid 1px green;
+}
+
+.section {
+    padding: 10px;
+    margin: 10px;
+    border: solid 2px red;
+}
+
+hr {
+    border: dashed 1px lightgrey;
+}

@@ -1,0 +1,20 @@
+<div *ngIf="displayPlayground">
+  <h3>I'm in the App Component</h3>
+  <hr />
+  <app-servers></app-servers>
+  <app-warning-alert></app-warning-alert>
+  <app-success-alert>Success Alert - content is comming from the parent component!!!</app-success-alert>
+</div>
+
+<app-header
+  (selectEvent)="selectEvent($event)"
+  (toggleDisplayPlayground)="onToggleDisplayPlayground()">
+</app-header>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <app-recipe *ngIf="selectedValue === 'recipe'"></app-recipe>
+      <app-shopping-list *ngIf="selectedValue === 'shopping'"></app-shopping-list>
+    </div>
+  </div>
+</div>
