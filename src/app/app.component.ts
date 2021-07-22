@@ -6,15 +6,15 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  selectedValue: string;
-  displayPlayground: boolean;
+  // selectedValue: string;
+  // displayPlayground: boolean;
 
-  selectEvent(selectedValue: string) {
-    this.selectedValue = selectedValue;
-  }
+  // selectEvent(selectedValue: string) {
+  //   this.selectedValue = selectedValue;
+  // }
 
-  onToggleDisplayPlayground() {
-    this.displayPlayground = !this.displayPlayground;
-  }
+  // onToggleDisplayPlayground() {
+  //   this.displayPlayground = !this.displayPlayground;
+  // }
 
 }

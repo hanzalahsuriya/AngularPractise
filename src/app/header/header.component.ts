@@ -9,19 +9,19 @@ import {
 })
 export class HeaderComponent implements OnInit {
 
-  @Output() selectEvent = new EventEmitter<string>();
-  @Output() toggleDisplayPlayground = new EventEmitter();
+  // @Output() selectEvent = new EventEmitter<string>();
+  // @Output() toggleDisplayPlayground = new EventEmitter();
 
   constructor() { }
 
   ngOnInit(): void {
   }
 
-  onSelectNav(selectedValue: string) {
-    this.selectEvent.emit(selectedValue);
-  }
+  // onSelectNav(selectedValue: string) {
+  //   this.selectEvent.emit(selectedValue);
+  // }
 
-  onToggleDisplayPlayground(){
-    this.toggleDisplayPlayground.emit();
-  }
+  // onToggleDisplayPlayground(){
+  //   this.toggleDisplayPlayground.emit();
+  // }
 }
