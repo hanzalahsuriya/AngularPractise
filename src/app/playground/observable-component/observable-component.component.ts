@@ -16,10 +16,22 @@ export class ObservableComponentComponent implements OnInit, OnDestroy {
       let count = 0;
       setInterval(()=>{
         observer.next(count++);
+        
+        if(count === 3) {
+          observer.complete();
+        }
+
+        if(count > 5) {
+          observer.error(new Error("ohh no... count is greater than 5"));
+        }
       }, 1000);
     });
 
-    this.subscription = observable.subscribe((v) => console.log(v));
+    this.subscription = observable.subscribe(
+      (v) => console.log(v),
+      (error) => { console.error(error); alert(error) },
+      () => console.log('COMPLETED')
+    );
   }
 
   ngOnDestroy(): void {
