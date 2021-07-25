@@ -35,7 +35,7 @@ export class RecipeService {
         return this.recipes[idx];
       }
 
-      recipeSeleced = new EventEmitter<Recipe>();
+      // recipeSeleced = new EventEmitter<Recipe>();
 
       addIngredientToShoppingList(ingredients: Ingredient[]) {
         this.shoppingListService.addIngredients(ingredients);
