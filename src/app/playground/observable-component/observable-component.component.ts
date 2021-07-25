@@ -1,5 +1,6 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Observable, ObservedValuesFromArray, Observer, Subscription } from 'rxjs';
+import { map } from 'rxjs/Operators';
 
 @Component({
   selector: 'app-observable-component',
@@ -27,7 +28,8 @@ export class ObservableComponentComponent implements OnInit, OnDestroy {
       }, 1000);
     });
 
-    this.subscription = observable.subscribe(
+    // calling pipe and then map operator
+    this.subscription = observable.pipe(map((d) => `Round: ${d+1}`)) .subscribe(
       (v) => console.log(v),
       (error) => { console.error(error); alert(error) },
       () => console.log('COMPLETED')
