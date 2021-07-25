@@ -31,6 +31,10 @@ export class RecipeService {
           return this.recipes.slice();
       }
 
+      getRecipe(idx: number) {
+        return this.recipes[idx];
+      }
+
       recipeSeleced = new EventEmitter<Recipe>();
 
       addIngredientToShoppingList(ingredients: Ingredient[]) {

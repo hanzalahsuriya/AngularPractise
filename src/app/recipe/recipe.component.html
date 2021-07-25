@@ -3,10 +3,12 @@
     <app-recipe-list></app-recipe-list> 
   </div>
   <div class="col-md-5">
-    <app-recipe-detail [recipe]="selectedRecipe" *ngIf="selectedRecipe; else selectRecipeMessage"></app-recipe-detail>
+    <router-outlet></router-outlet>
+
+    <!-- <app-recipe-detail [recipe]="selectedRecipe" *ngIf="selectedRecipe; else selectRecipeMessage"></app-recipe-detail>
       <ng-template #selectRecipeMessage>
         <p appBasicHighlight>Please select a recipe (applied view directive)</p>
         <p appBetterHighlight [defaultColor]="'green'" [highlightColor]="'yellow'">Please select a recipe (applied view directive)</p>
-      </ng-template>
+      </ng-template> -->
   </div>
 </div>

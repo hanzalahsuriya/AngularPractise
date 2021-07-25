@@ -10,7 +10,6 @@ import { RecipeService } from '../recipe.service';
 export class RecipeListComponent implements OnInit {
 
   recipes: Recipe[] = [];
-
   constructor(recipeService: RecipeService) {
     this.recipes = recipeService.getRecipes();
   }

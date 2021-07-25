@@ -23,6 +23,8 @@ import { RecipeService } from './recipe/recipe.service';
 import { ShoppingListService } from './shopping-list/shopping-list.service';
 import { AppRoutingModule } from './app-routing.module';
 import { PlaygroundComponent } from './playground/playground.component';
+import { RecipeStartComponent } from './recipe/recipe-start.component';
+import { RecipeEditComponent } from './recipes/recipe-edit/recipe-edit.component';
 
 @NgModule({
   declarations: [
@@ -44,7 +46,9 @@ import { PlaygroundComponent } from './playground/playground.component';
     UnlessDirective,
     DropdownMenuDirective,
     DropdownMenu2Directive,
-    PlaygroundComponent
+    PlaygroundComponent,
+    RecipeStartComponent,
+    RecipeEditComponent
   ],
   imports: [
     BrowserModule,
