@@ -31,7 +31,7 @@ export class ObservableComponentComponent implements OnInit, OnDestroy {
     // calling pipe and filter operator
     // calling pipe and then map operator
     this.subscription = observable.pipe(
-      filter(d => d === 0),
+      filter(d => d > 0), // onle the ones where data > 0
       map((d) => `Round: ${d + 1}`))
       .subscribe(
         (v) => console.log(v),
