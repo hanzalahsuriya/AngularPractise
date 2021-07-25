@@ -25,6 +25,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { PlaygroundComponent } from './playground/playground.component';
 import { RecipeStartComponent } from './recipe/recipe-start/recipe-start.component';
 import { RecipeEditComponent } from './recipe/recipe-edit/recipe-edit.component';
+import { ObservableComponentComponent } from './playground/observable-component/observable-component.component';
 
 @NgModule({
   declarations: [
@@ -48,7 +49,8 @@ import { RecipeEditComponent } from './recipe/recipe-edit/recipe-edit.component'
     DropdownMenu2Directive,
     PlaygroundComponent,
     RecipeStartComponent,
-    RecipeEditComponent
+    RecipeEditComponent,
+    ObservableComponentComponent
   ],
   imports: [
     BrowserModule,
